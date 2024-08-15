@@ -320,3 +320,12 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+/src/SSCMS.Web/key-*.xml
+/src/SSCMS.Web/sscms.json
+/src/SSCMS.Web/wwwroot/*.html
+/src/SSCMS.Web/wwwroot/channels/*.html
+/src/SSCMS.Web/wwwroot/contents/*.html
+/src/SSCMS.Web/wwwroot/contents/*/*.html
+/src/SSCMS.Web/wwwroot/sitefiles/*.html
+/src/SSCMS.Web/wwwroot/Template/*.html
+/src/SSCMS.Web/wwwroot/Template/Content/*.html
