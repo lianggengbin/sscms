@@ -323,6 +323,7 @@ __pycache__/
 /src/SSCMS.Web/key-*.xml
 /src/SSCMS.Web/sscms.json
 /src/SSCMS.Web/wwwroot/*.html
+!/src/SSCMS.Web/wwwroot/404.html
 /src/SSCMS.Web/wwwroot/channels/*.html
 /src/SSCMS.Web/wwwroot/contents/*.html
 /src/SSCMS.Web/wwwroot/contents/*/*.html
