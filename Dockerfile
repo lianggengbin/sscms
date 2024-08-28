@@ -33,7 +33,7 @@ ARG APP_VERSION
 WORKDIR /code
 COPY --from=build /code .
 RUN npm run copy-${OS_VERSION}
-RUN cp -r ./publish/sscms-${APP_VERSION}-${OS_VERSION}/wwwroot ./publish/sscms-${APP_VERSION}-${OS_VERSION}/_wwwroot
+RUN mv ./publish/sscms-${APP_VERSION}-${OS_VERSION}/wwwroot ./publish/sscms-${APP_VERSION}-${OS_VERSION}/_wwwroot
 RUN ls ./publish/sscms-${APP_VERSION}-${OS_VERSION}
 RUN echo `date +%Y-%m-%d-%H-%M-%S` > ./publish/sscms-${APP_VERSION}-${OS_VERSION}/_wwwroot/sitefiles/version.txt
 
