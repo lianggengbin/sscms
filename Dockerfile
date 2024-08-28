@@ -1,5 +1,3 @@
-
-
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS base
 WORKDIR /app
@@ -39,11 +37,11 @@ RUN cp -r ./publish/sscms-${APP_VERSION}-${OS_VERSION}/wwwroot ./publish/sscms-$
 RUN ls ./publish/sscms-${APP_VERSION}-${OS_VERSION}
 RUN echo `date +%Y-%m-%d-%H-%M-%S` > ./publish/sscms-${APP_VERSION}-${OS_VERSION}/_wwwroot/sitefiles/version.txt
 
-FROM copyfile AS final
+FROM base AS final
 ARG OS_VERSION
 ARG APP_VERSION
 WORKDIR /app
-COPY --from=build /code/publish/sscms-${APP_VERSION}-${OS_VERSION} .
+COPY --from=copyfile /code/publish/sscms-${APP_VERSION}-${OS_VERSION} .
 ENTRYPOINT ["dotnet", "SSCMS.Web.dll"]
 
 # docker build -t sscms/core:dev .
