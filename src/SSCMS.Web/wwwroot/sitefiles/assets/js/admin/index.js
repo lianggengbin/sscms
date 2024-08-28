@@ -162,11 +162,13 @@ var methods = {
 
     this.apiCache();
 
-    if (this.isSuperAdmin) {
-      this.getUpdates();
-    }
-
+    //not check update
+    //if (this.isSuperAdmin) {
+    //  this.getUpdates();
+    //}
+    console.log('mark1');
     utils.loading(this, false);
+    console.log('mark2');
   },
 
   getUpdates: function () {
@@ -411,10 +413,12 @@ var $vue = new Vue({
   data: data,
   methods: methods,
   created: function () {
+    console.log('mark3');
     utils.keyPress(null, function () {
       utils.removeTab();
     });
     this.apiGet();
+    console.log('mark4');
   },
   computed: {
     leftWidth: function () {
