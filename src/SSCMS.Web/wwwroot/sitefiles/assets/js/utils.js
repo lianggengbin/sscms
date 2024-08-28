@@ -1115,7 +1115,7 @@ if (sessionId && accessToken) {
 }
 
 var $token = sessionStorage.getItem(ACCESS_TOKEN_NAME) || localStorage.getItem(ACCESS_TOKEN_NAME) || utils.getQueryString('accessToken');
-console.log($token);
+console.log($apiUrl,$token);
 var $api = axios.create({
   baseURL: $apiUrl,
   headers: {
@@ -1124,6 +1124,7 @@ var $api = axios.create({
 });
 
 $api.csrfPost = function (csrfToken, url, data) {
+  console.log('csrf', csrfToken, url, data);
   return $api.post(url, data, {
     headers: {
       "X-CSRF-TOKEN": csrfToken

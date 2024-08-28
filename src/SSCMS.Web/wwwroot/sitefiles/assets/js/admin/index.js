@@ -63,7 +63,7 @@ var methods = {
       }
     }).then(function (response) {
       var res = response.data;
-
+      console.log('mark res', res);
       if (res.value) {
         utils.addTab('首页', utils.getRootUrl('dashboard'));
 
@@ -161,11 +161,10 @@ var methods = {
     window.onresize();
 
     this.apiCache();
-
-    //not check update
-    //if (this.isSuperAdmin) {
-    //  this.getUpdates();
-    //}
+    
+    if (this.isSuperAdmin) {
+      this.getUpdates();
+    }
     console.log('mark1');
     utils.loading(this, false);
     console.log('mark2');
