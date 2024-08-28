@@ -7,7 +7,6 @@ EXPOSE 443
 
 
 FROM node:18 AS npm
-# 定义构建时变量
 ARG OS_VERSION
 ARG APP_VERSION
 WORKDIR /code
