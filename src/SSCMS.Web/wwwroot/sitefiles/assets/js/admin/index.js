@@ -63,7 +63,7 @@ var methods = {
       }
     }).then(function (response) {
       var res = response.data;
-      console.log('mark res', res);
+      console.log('config res', res);
       if (res.value) {
         utils.addTab('首页', utils.getRootUrl('dashboard'));
 
@@ -80,9 +80,9 @@ var methods = {
           $this.isAdminTicketsDisabled = res.isAdminTicketsDisabled;
         } else {
           $this.adminLogoUrl = utils.getAssetsUrl('images/logo.png');
-          $this.adminLogoLinkUrl = 'https://sscms.com';
+          $this.adminLogoLinkUrl = '/';// 'https://sscms.com';
           adminFaviconUrl = utils.getAssetsUrl('images/favicon.png');
-          $this.adminTitle = 'SSCMS 管理后台';
+          $this.adminTitle = '网站 管理后台';// 'SSCMS 管理后台';
           $this.isAdminUpdateDisabled = false;
           $this.isAdminTicketsDisabled = false;
         }
@@ -165,9 +165,7 @@ var methods = {
     if (this.isSuperAdmin) {
       this.getUpdates();
     }
-    console.log('mark1');
     utils.loading(this, false);
-    console.log('mark2');
   },
 
   getUpdates: function () {
@@ -412,12 +410,10 @@ var $vue = new Vue({
   data: data,
   methods: methods,
   created: function () {
-    console.log('mark3');
     utils.keyPress(null, function () {
       utils.removeTab();
     });
     this.apiGet();
-    console.log('mark4');
   },
   computed: {
     leftWidth: function () {
