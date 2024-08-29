@@ -80,7 +80,7 @@ var methods = {
           $this.isAdminTicketsDisabled = res.isAdminTicketsDisabled;
         } else {
           $this.adminLogoUrl = utils.getAssetsUrl('images/logo.png');
-          $this.adminLogoLinkUrl = '/';// 'https://sscms.com';
+          $this.adminLogoLinkUrl = '/ss-admin/';// 'https://sscms.com';
           adminFaviconUrl = utils.getAssetsUrl('images/favicon.png');
           $this.adminTitle = '网站 管理后台';// 'SSCMS 管理后台';
           $this.isAdminUpdateDisabled = false;
